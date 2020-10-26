@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Indigo"
+    tools:context=".activity.MainActivity">
+
+    <TextView
+        android:id="@+id/tvCountry"
+        style="@style/Header1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Indonesia"
+        android:textColor="@color/White"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibInfo"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#00000000"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+
+        app:layout_constraintBottom_toBottomOf="@+id/tvCountry"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvCountry"
+        app:srcCompat="@drawable/information" />
+
+    <ImageView
+        android:id="@+id/covidIllustration"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toStartOf="@+id/totalCase"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCountry"
+        android:src="@drawable/virus"/>
+
+    <TextView
+        android:id="@+id/totalCase"
+        style="@style/Header1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="86521"
+        android:textColor="@color/White"
+        app:layout_constraintBottom_toTopOf="@+id/totalsCaseLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@+id/covidIllustration"
+        app:layout_constraintTop_toTopOf="@+id/covidIllustration"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/totalsCaseLabel"
+        style="@style/body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Cases"
+        android:textColor="@color/White"
+        app:layout_constraintBottom_toBottomOf="@+id/covidIllustration"
+        app:layout_constraintEnd_toEndOf="@+id/totalCase"
+        app:layout_constraintStart_toStartOf="@+id/totalCase"
+        app:layout_constraintTop_toBottomOf="@+id/totalCase"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/white_top_rounded_corner_bg"
+
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/covidIllustration"
+        app:layout_constraintVertical_bias="1.0">
+
+        <!-- Total Positive Case -->
+        <LinearLayout
+            android:id="@+id/positiveCaseContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_rectangle"
+            android:backgroundTint="@color/Teal"
+
+            android:elevation="6dp"
+            android:gravity="center"
+            android:minWidth="100dp"
+            android:minHeight="100dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/recoveredCaseContainer"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/recoveredCaseContainer">
+
+            <TextView
+                android:id="@+id/totalPositive"
+                style="@style/Header4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="36977"
+                android:textColor="@color/White" />
+
+            <TextView
+                android:id="@+id/totalPositiveLabel"
+                style="@style/body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Positive"
+                android:textColor="@color/White" />
+        </LinearLayout>
+
+        <!-- Total Recovered -->
+        <LinearLayout
+            android:id="@+id/recoveredCaseContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_rectangle"
+            android:backgroundTint="@color/Green"
+            android:elevation="6dp"
+            android:gravity="center"
+            android:minWidth="100dp"
+            android:minHeight="100dp"
+
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/deathCaseContainer"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@+id/positiveCaseContainer"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/totalRecovered"
+                style="@style/Header4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="45401"
+                android:textColor="@color/White" />
+
+            <TextView
+                android:id="@+id/totalRecoveredLabel"
+                style="@style/body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recovered"
+                android:textColor="@color/White" />
+        </LinearLayout>
+
+        <!-- Total Death -->
+        <LinearLayout
+            android:id="@+id/deathCaseContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_rectangle"
+            android:backgroundTint="@color/Red"
+
+            android:elevation="6dp"
+            android:gravity="center"
+            android:minWidth="100dp"
+            android:minHeight="100dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@+id/recoveredCaseContainer"
+            app:layout_constraintTop_toTopOf="@+id/recoveredCaseContainer">
+
+            <TextView
+                android:id="@+id/totalDeath"
+                style="@style/Header4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4143"
+                android:textColor="@color/White" />
+
+            <TextView
+                android:id="@+id/totalDeathLabel"
+                style="@style/body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Death"
+                android:textColor="@color/White" />
+        </LinearLayout>
+
+        <!-- Main Feature Navigation Buttons -->
+        <TextView
+            android:id="@+id/mainFeatureHeader"
+            style="@style/Header4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Get to know more"
+            android:textColor="@color/Indigo_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/positiveCaseContainer" />
+
+        <!-- Look Up Button -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lookUpButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_corner_rectangle"
+
+            android:backgroundTint="@color/Off_White"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/mainFeatureHeader"
+            app:layout_constraintTop_toBottomOf="@+id/mainFeatureHeader">
+
+            <ImageView
+                android:id="@+id/lookUpImage"
+                android:layout_width="50dp"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/map"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/lookUpHeader"
+                style="@style/Header5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="Look Up"
+                android:textColor="@color/Indigo_2"
+                app:layout_constraintStart_toEndOf="@+id/lookUpImage"
+                app:layout_constraintTop_toTopOf="@+id/lookUpImage" />
+
+            <TextView
+                android:id="@+id/lookUpContent"
+                style="@style/body2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="40dp"
+                android:text="See details by province all over Indonesia"
+                android:textColor="@color/Indigo_2"
+                app:layout_constraintBottom_toBottomOf="@+id/lookUpImage"
+                app:layout_constraintEnd_toStartOf="@+id/lookUpArrIcon"
+                app:layout_constraintStart_toStartOf="@+id/lookUpHeader"
+                app:layout_constraintTop_toBottomOf="@+id/lookUpHeader"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageButton
+                android:id="@+id/lookUpArrIcon"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:backgroundTint="#00000000"
+                android:padding="0dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="@+id/lookUpContent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/lookUpHeader"
+                app:srcCompat="@drawable/right_arrow" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Look Up Button -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/hotlineButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_corner_rectangle"
+            android:backgroundTint="@color/Off_White"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/lookUpButton"
+            app:layout_constraintTop_toBottomOf="@+id/lookUpButton">
+
+            <ImageView
+                android:id="@+id/hotlineImage"
+                android:layout_width="50dp"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/alert"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/hotlineHeader"
+                style="@style/Header5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="Hotline"
+                android:textColor="@color/Indigo_2"
+                app:layout_constraintStart_toEndOf="@+id/hotlineImage"
+                app:layout_constraintTop_toTopOf="@+id/hotlineImage" />
+
+            <TextView
+                android:id="@+id/hotlineContent"
+                style="@style/body2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="40dp"
+                android:text="Check emergency number to contact"
+                android:textColor="@color/Indigo_2"
+                app:layout_constraintBottom_toBottomOf="@+id/hotlineImage"
+                app:layout_constraintEnd_toStartOf="@+id/hotlineArrIcon"
+                app:layout_constraintStart_toStartOf="@+id/hotlineHeader"
+                app:layout_constraintTop_toBottomOf="@+id/hotlineHeader" />
+
+            <ImageButton
+                android:id="@+id/hotlineArrIcon"
+                style="@style/Widget.AppCompat.ImageButton"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:backgroundTint="#00000000"
+                android:padding="0dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="@+id/hotlineContent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/hotlineHeader"
+                app:srcCompat="@drawable/right_arrow" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include layout="@layout/dialog_hotline" android:visibility="gone"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,63 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+<!--         Customize your theme here. -->
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+    </style>
+
+    <!-- Typography Style -->
+    <style name="Header1" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/rubik_typeface_resource</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="Header4" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/rubik_typeface_resource</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Header5" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/rubik_typeface_resource</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Header6" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/rubik_typeface_resource</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+<!-- Body Font Style should use Karla font family -->
+    <style name="body1" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/rubik_typeface_resource</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="body2" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/rubik_typeface_resource</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="body3" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/rubik_typeface_resource</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!--////////////////////-->
+
+    <style name="AppBottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/rounded_dialog</item>
+    </style>
+
+</resources>
